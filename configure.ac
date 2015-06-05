@@ -23,14 +23,15 @@ AC_HEADER_STDC
 AC_CHECK_HEADERS(fcntl.h paths.h sys/ioctl.h sys/time.h syslog.h unistd.h)
 
 AC_CHECK_HEADERS(pppd/pppd.h,,
-  AC_MSG_ERROR(couldn't find pppd.h. pppd development headers are required.))
+  AC_MSG_ERROR(couldn\'t find pppd.h. pppd development headers are required.))
 
 AC_ARG_WITH([pppd-plugin-dir], AS_HELP_STRING([--with-pppd-plugin-dir=DIR], [path to the pppd plugins directory]))
 
 if test -n "$with_pppd_plugin_dir" ; then
 	PPPD_PLUGIN_DIR="$with_pppd_plugin_dir"
 else
-	PPPD_PLUGIN_DIR="${libdir}/pppd/2.4.5"
+  PPPD_VERSION="`cat /usr/include/pppd/patchlevel.h | grep 'VERSION' | cut -f 3 | sed 's/\"//g'`"
+	PPPD_PLUGIN_DIR="${libdir}/pppd/${PPPD_VERSION}"
 fi
 AC_SUBST(PPPD_PLUGIN_DIR)
 
