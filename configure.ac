@@ -1,6 +1,6 @@
 AC_PREREQ(2.59)
 
-AC_INIT(NetworkManager-l2tp, 0.9.8.5, root@seriyps.ru, NetworkManager-l2tp)
+AC_INIT(NetworkManager-l2tp, 0.9.8.6, scott@awesomebarnes.com, NetworkManager-l2tp)
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-bzip2 subdir-objects])
 AM_MAINTAINER_MODE
 
@@ -81,13 +81,13 @@ AC_SUBST(NM_LIBS)
 
 if test x"$with_gnome" != xno; then
 	PKG_CHECK_MODULES(GTK, gtk+-3.0 >= 3.4)
-	AC_SUBST(GTK_CFLAGS)
-	AC_SUBST(GTK_LIBS)
+  AC_SUBST(GTK_CFLAGS)
+  AC_SUBST(GTK_LIBS)
 	GTK_CFLAGS="$GTK_CFLAGS -DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_3_4"
 
-	PKG_CHECK_MODULES(GNOMEKEYRING, gnome-keyring-1)
-	AC_SUBST(GNOMEKEYRING_CFLAGS)
-	AC_SUBST(GNOMEKEYRING_LIBS)
+  PKG_CHECK_MODULES(LIBSECRET, libsecret-unstable)
+  AC_SUBST(LIBSECRET_CFLAGS)
+  AC_SUBST(LIBSECRET_LIBS)
 fi
 
 NM_COMPILER_WARNINGS

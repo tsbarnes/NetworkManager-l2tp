@@ -23,7 +23,6 @@
  */
 
 #include <config.h>
-#include <gnome-keyring-memory.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
@@ -39,7 +38,7 @@ typedef struct {
 	/* Attributes */
 	gboolean show_password;
 	gboolean show_password_secondary;
-	
+
 	/* Internal widgetry and flags */
 	GtkWidget *password_entry;
 	GtkWidget *password_entry_secondary;
@@ -48,7 +47,7 @@ typedef struct {
 	GtkWidget *grid_alignment;
 	GtkWidget *grid;
 	GtkSizeGroup *group;
-	
+
 	char *primary_password_label;
 	char *secondary_password_label;
 } VpnPasswordDialogPrivate;
@@ -65,7 +64,7 @@ static void
 finalize (GObject *object)
 {
 	VpnPasswordDialogPrivate *priv = VPN_PASSWORD_DIALOG_GET_PRIVATE (object);
-	
+
 	g_object_unref (priv->password_entry);
 	g_object_unref (priv->password_entry_secondary);
 	g_object_unref (priv->group);
@@ -147,7 +146,7 @@ add_grid_rows (VpnPasswordDialog *dialog)
 
 	/* This will not kill the entries, since they are ref:ed */
 	gtk_container_foreach (GTK_CONTAINER (priv->grid), (GtkCallback) remove_child, priv->grid);
-	
+
 	row = 0;
 	if (priv->show_password)
 		add_row (priv->grid, row++, priv->primary_password_label, priv->password_entry);
@@ -239,7 +238,7 @@ vpn_password_dialog_new (const char *title,
 	g_object_ref_sink (priv->password_entry);
 	g_object_ref_sink (priv->password_entry_secondary);
 	g_object_ref_sink (priv->show_passwords_checkbox);
-	
+
 	gtk_entry_set_visibility (GTK_ENTRY (priv->password_entry), FALSE);
 	gtk_entry_set_visibility (GTK_ENTRY (priv->password_entry_secondary), FALSE);
 
@@ -284,7 +283,7 @@ vpn_password_dialog_new (const char *title,
 	gtk_widget_show_all (GTK_WIDGET (content));
 
 	vpn_password_dialog_set_password (VPN_PASSWORD_DIALOG (dialog), password);
-	
+
 	return GTK_WIDGET (dialog);
 }
 
