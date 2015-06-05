@@ -1,5 +1,5 @@
 #!/usr/bin/dh-exec
-usr/lib/${DEB_HOST_MULTIARCH}/NetworkManager/*.so lib/${DEB_HOST_MULTIARCH}/NetworkManager/
-usr/lib/NetworkManager/nm-l2tp-auth-dialog lib/NetworkManager/
-usr/share/gnome-vpn-properties share/
-usr/share/locale share/
+usr/lib/${DEB_HOST_MULTIARCH}/NetworkManager/*.so
+usr/lib/NetworkManager/nm-l2tp-auth-dialog
+usr/share/gnome-vpn-properties
+usr/share/locale
