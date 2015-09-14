@@ -1,3 +1,7 @@
+network-manager-l2tp (1.0.6.0-0stretch1) stretch; urgency=medium
+  * fix build rules 'intltoolize -c -f' 
+ -- CarrolCox <mr.jsdive@gmail.com>  Thu, 15 Sep 2015 00:42:19 +0500
+
 network-manager-l2tp (0.9.8.6-0vivid1) vivid; urgency=medium
 
   * Fixed depends and removed deprecated gnome-keyring calls.
