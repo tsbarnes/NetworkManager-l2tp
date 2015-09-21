@@ -10,6 +10,7 @@ include /usr/share/dpkg/buildflags.mk
 	dh $@ --with autoreconf
 
 override_dh_auto_configure:
+	intltoolize -c -f
 	dh_auto_configure -- \
 		--libexecdir=\$${prefix}/lib/NetworkManager \
 		--with-pppd-plugin-dir=\$${prefix}/lib/pppd/$(PPPD_VERSION) \

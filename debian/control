@@ -24,7 +24,7 @@ Homepage: https://github.com/tsbarnes/NetworkManager-l2tp
 
 Package: network-manager-l2tp
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ppp (>= 2.4.6), xl2tpd, openswan
+Depends: ${shlibs:Depends}, ${misc:Depends}, ppp (>= 2.4.6), xl2tpd, strongswan
 Recommends: network-manager-l2tp-gnome | plasma-widget-networkmanagement
 Description: network management framework (L2TP plugin core)
  NetworkManager is a system network service that manages your network devices
